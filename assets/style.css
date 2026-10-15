@@ -1,0 +1,39 @@
+@font-face{font-family:"IBM Plex Sans";font-weight:400;font-display:swap;src:url(fonts/IBMPlexSans-Regular.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-weight:500;font-display:swap;src:url(fonts/IBMPlexSans-Medium.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-weight:600;font-display:swap;src:url(fonts/IBMPlexSans-SemiBold.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-weight:500;font-display:swap;src:url(fonts/IBMPlexMono-Medium.woff2) format("woff2")}
+
+:root{
+  --ink:#0B0D10;--white:#FFFFFF;--signal-orange:#FF5A1F;--orange-deep:#C2410C;
+  --graphite:#2A2F36;--steel:#6B7480;--silver:#AEB5BE;--mist:#E6E9ED;--paper:#F7F8FA;
+  --font-sans:"IBM Plex Sans",Arial,sans-serif;--font-mono:"IBM Plex Mono",Consolas,Menlo,monospace;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--ink);color:var(--white);font:400 16px/24px var(--font-sans);-webkit-font-smoothing:antialiased}
+
+.page{position:relative;min-height:100%;display:flex;flex-direction:column;overflow:hidden}
+.motif{position:absolute;top:0;right:0;width:min(60vw,640px);height:auto;pointer-events:none}
+.motif line{stroke:var(--signal-orange)}
+
+header,main,footer{position:relative;width:100%;max-width:1120px;margin:0 auto;padding:0 24px}
+header{padding-top:32px}
+.brand{display:inline-flex;align-items:center;gap:12px;color:var(--white);text-decoration:none;font-weight:500;font-size:18px}
+.brand img{height:32px;width:auto;display:block}
+
+main{flex:1;display:flex;flex-direction:column;justify-content:center;padding-top:96px;padding-bottom:96px}
+.label{font:500 12px/16px var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--silver);margin:0 0 24px}
+h1{font-weight:600;font-size:48px;line-height:56px;margin:0 0 16px;max-width:18ch}
+.lead{font-size:24px;line-height:32px;color:var(--silver);margin:0 0 48px;max-width:36ch}
+.btn{display:inline-block;align-self:flex-start;background:var(--signal-orange);color:var(--ink);font-weight:500;text-decoration:none;padding:12px 24px;border-radius:3px}
+.btn:hover,.btn:focus-visible{background:#ff7340}
+.btn:focus-visible{outline:2px solid var(--white);outline-offset:3px}
+
+footer{padding-top:24px;padding-bottom:32px;border-top:1px solid var(--graphite);font-size:13px;line-height:20px;color:var(--silver)}
+
+@media (max-width:600px){
+  header,main,footer{padding-left:16px;padding-right:16px}
+  h1{font-size:36px;line-height:44px}
+  .lead{font-size:18px;line-height:26px}
+  .motif{width:90vw;opacity:.6}
+}
