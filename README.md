@@ -15,3 +15,14 @@ Structure:
 - `assets/img/symbol_accent.svg` — logo symbol
 
 Open items: contact e-mail placeholder in `index.html`, full horizontal logo files from the brand package (`01_logo/`).
+
+## Deployment (GitHub Pages)
+
+Every push to `main` deploys the site via `.github/workflows/pages.yml` (manual run: Actions → Deploy to GitHub Pages → Run workflow). Only `index.html`, `favicon.svg` and `assets/` are published.
+
+One-time setup in the repository:
+1. Settings → Pages → Build and deployment → Source: **GitHub Actions**.
+2. Custom domain (optional): Settings → Pages → Custom domain → `kosterski-engineering.com`, then at the DNS provider:
+   - apex `kosterski-engineering.com`: A records `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` (and AAAA `2606:50c0:8000::153` … `8003::153`),
+   - `www`: CNAME `kosterski-engineering.github.io`.
+   After DNS check passes, enable **Enforce HTTPS**.
