@@ -25,8 +25,8 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  # Repository files that are not part of the website
-  EXCLUDE: README.md CLAUDE.md .github .gitignore .claude
+  # Cloudflare-only files, not used by GitHub Pages
+  EXCLUDE: _headers
   GH_TOKEN: ${{ github.token }}
   GH_REPO: ${{ github.repository }}
 
@@ -47,9 +47,9 @@ jobs:
       - name: Assemble site and previews
         run: |
           set -euo pipefail
-          export_tree() {  # $1 = git ref, $2 = target directory
+          export_tree() {  # $1 = git ref, $2 = target directory; publishes site/ only
             mkdir -p "$2"
-            git archive "$1" | tar -x -C "$2"
+            git archive "$1" site | tar -x --strip-components=1 -C "$2"
             (cd "$2" && rm -rf $EXCLUDE)
           }
 
