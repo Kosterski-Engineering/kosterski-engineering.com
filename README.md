@@ -20,10 +20,6 @@ Structure:
 
 Hosting and previews are described in `CLAUDE.md` (section **Hosting**), together with the working rules for Claude Code sessions.
 
-### Cloudflare Pages (target)
+### Cloudflare Pages
 
-Workers & Pages → Create → Pages → Connect to Git → `Kosterski-Engineering/kosterski-engineering.com`; project name `kosterski-engineering-com`, production branch `main`, framework preset None, build command empty, build output directory `site`.
-
-### GitHub Pages (until the cutover)
-
-`.github/workflows/pages.yml` publishes `site/` from `main` and from every open pull request (at `<site>/preview/<random UUID>/`, link posted as a PR comment). Previews are `noindex, nofollow`; until the official launch production is too (meta tag in `site/index.html`). Repository setting: Settings → Pages → Build and deployment → Source: **GitHub Actions**.
+Workers & Pages → Create → Pages → Connect to Git → `Kosterski-Engineering/kosterski-engineering.com`; project name `kosterski-engineering-com`, production branch `main`, framework preset None, build command empty, build output directory `site`. Branch previews are behind Cloudflare Access.
