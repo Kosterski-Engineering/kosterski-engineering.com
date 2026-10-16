@@ -22,7 +22,7 @@ Hosting and previews are described in `CLAUDE.md` (section **Hosting**), togethe
 
 ### Cloudflare Pages (target)
 
-Workers & Pages → Create → Pages → Connect to Git → `Kosterski-Engineering/kosterski-engineering.com`; project name `kosterski-engineering`, production branch `main`, framework preset None, build command empty, build output directory `site`.
+Workers & Pages → Create → Pages → Connect to Git → `Kosterski-Engineering/kosterski-engineering.com`; project name `kosterski-engineering-com`, production branch `main`, framework preset None, build command empty, build output directory `site`.
 
 ### GitHub Pages (until the cutover)
 
