@@ -9,16 +9,15 @@ python3 -m http.server 8000
 
 Structure:
 - `index.html` — landing page
-- `favicon.svg` — Signal Orange symbol on an Ink tile
-- `assets/style.css` — brand tokens (colours, IBM Plex type) and layout
+- `favicon.svg`, `favicon.ico`, `apple-touch-icon.png` — favicons from the brand pack
+- `assets/tokens.css` — brand tokens from the brand pack (`07_web/tokens.css`, do not edit)
+- `assets/style.css` — page layout, uses the `--ke-` tokens
 - `assets/fonts/` — IBM Plex Sans / Mono (woff2, self-hosted)
-- `assets/img/symbol_accent.svg` — logo symbol
-
-Open items: contact e-mail placeholder in `index.html`, full horizontal logo files from the brand package (`01_logo/`).
+- `assets/img/logo_horizontal_accent_dark_bg.svg` — horizontal logo for dark ground (brand pack 2026-10-14)
 
 ## Deployment (GitHub Pages)
 
-Every push to `main` deploys the site via `.github/workflows/pages.yml` (manual run: Actions → Deploy to GitHub Pages → Run workflow). Only `index.html`, `favicon.svg` and `assets/` are published.
+Every push to `main` deploys the site via `.github/workflows/pages.yml` (manual run: Actions → Deploy to GitHub Pages → Run workflow). Only `index.html`, the favicon files and `assets/` are published.
 
 One-time setup in the repository:
 1. Settings → Pages → Build and deployment → Source: **GitHub Actions**.

@@ -1,0 +1,73 @@
+:root {
+  --ke-color-ink: #0B0D10;
+  --ke-color-white: #FFFFFF;
+  --ke-color-orange: #FF5A1F;
+  --ke-color-orange-deep: #C2410C;
+  --ke-color-orange-tint: #FFE8DE;
+  --ke-color-graphite: #2A2F36;
+  --ke-color-steel: #6B7480;
+  --ke-color-silver: #AEB5BE;
+  --ke-color-mist: #E6E9ED;
+  --ke-color-paper: #F7F8FA;
+  --ke-font-sans: 'IBM Plex Sans', Arial, Helvetica, sans-serif;
+  --ke-font-mono: 'IBM Plex Mono', Consolas, Menlo, monospace;
+  --ke-type-display-size: 48px;
+  --ke-type-display-line: 56px;
+  --ke-type-display-weight: 600;
+  --ke-type-h1-size: 36px;
+  --ke-type-h1-line: 44px;
+  --ke-type-h1-weight: 600;
+  --ke-type-h2-size: 24px;
+  --ke-type-h2-line: 32px;
+  --ke-type-h2-weight: 600;
+  --ke-type-h3-size: 18px;
+  --ke-type-h3-line: 26px;
+  --ke-type-h3-weight: 600;
+  --ke-type-body-size: 16px;
+  --ke-type-body-line: 24px;
+  --ke-type-body-weight: 400;
+  --ke-type-small-size: 13px;
+  --ke-type-small-line: 20px;
+  --ke-type-small-weight: 400;
+  --ke-type-label-size: 12px;
+  --ke-type-label-line: 16px;
+  --ke-type-label-weight: 500;
+  --ke-type-code-size: 14px;
+  --ke-type-code-line: 20px;
+  --ke-type-code-weight: 400;
+  --ke-space-1: 4px;
+  --ke-space-2: 8px;
+  --ke-space-3: 12px;
+  --ke-space-4: 16px;
+  --ke-space-5: 24px;
+  --ke-space-6: 32px;
+  --ke-space-7: 48px;
+  --ke-space-8: 64px;
+  --ke-space-9: 96px;
+  --ke-radius-sm: 3px;
+  --ke-radius-md: 6px;
+  --ke-max-width: 1200px;
+  --ke-gutter: 24px;
+
+  /* semantic roles */
+  --ke-bg: var(--ke-color-white);
+  --ke-bg-alt: var(--ke-color-paper);
+  --ke-bg-inverse: var(--ke-color-ink);
+  --ke-text: var(--ke-color-ink);
+  --ke-text-muted: var(--ke-color-steel);
+  --ke-text-inverse: var(--ke-color-white);
+  --ke-link: var(--ke-color-orange-deep);
+  --ke-accent: var(--ke-color-orange);
+  --ke-border: var(--ke-color-mist);
+}
+
+/* Fonts: IBM Plex (SIL OFL) – Google Fonts or self-hosted (@fontsource/ibm-plex-sans, @fontsource/ibm-plex-mono) */
+body { font-family: var(--ke-font-sans); font-size: var(--ke-type-body-size); line-height: var(--ke-type-body-line); color: var(--ke-text); background: var(--ke-bg); }
+h1 { font-size: var(--ke-type-h1-size); line-height: var(--ke-type-h1-line); font-weight: 600; }
+h2 { font-size: var(--ke-type-h2-size); line-height: var(--ke-type-h2-line); font-weight: 600; }
+h3 { font-size: var(--ke-type-h3-size); line-height: var(--ke-type-h3-line); font-weight: 600; }
+a { color: var(--ke-link); }
+.ke-label { font-family: var(--ke-font-mono); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
+.ke-btn { display: inline-block; padding: 12px 20px; border-radius: var(--ke-radius-sm); background: var(--ke-color-orange); color: var(--ke-color-ink); font-weight: 600; text-decoration: none; }
+.ke-inverse { background: var(--ke-bg-inverse); color: var(--ke-text-inverse); }
+.ke-inverse a { color: var(--ke-color-orange); }

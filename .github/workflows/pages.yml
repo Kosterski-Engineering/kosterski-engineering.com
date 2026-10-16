@@ -27,7 +27,7 @@ jobs:
       - name: Stage site
         run: |
           mkdir _site
-          cp -r index.html favicon.svg assets _site/
+          cp -r index.html favicon.svg favicon.ico apple-touch-icon.png assets _site/
 
       - uses: actions/configure-pages@v5
 
