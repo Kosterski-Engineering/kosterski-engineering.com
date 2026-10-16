@@ -20,7 +20,7 @@ Company website of Kosterski Engineering sp. z o.o. Static HTML + CSS, no build 
 
 ## Previews
 
-`.github/workflows/pages.yml` deploys `main` and every open PR from this repository. Each PR is published at `<site>/preview/<random UUID>/`; the bot posts and updates the link as a comment on the PR. The link stays the same across pushes and disappears after the PR is merged or closed. Previews are unlisted (noindex), not access-protected.
+`.github/workflows/pages.yml` deploys `main` and every open PR from this repository. Each PR is published at `<site>/preview/<random UUID>/`; the bot posts and updates the link as a comment on the PR. The link stays the same across pushes and disappears after the PR is merged or closed. Previews are unlisted (noindex, nofollow), not access-protected. Production also has `noindex, nofollow` in `index.html` until the official launch; remove it then. GitHub Pages cannot send HTTP headers such as `X-Robots-Tag`, so use the meta tag.
 
 Files not published: `README.md`, `CLAUDE.md`, `.github/`, `.gitignore`, `.claude/` (the `EXCLUDE` list in the workflow).
 

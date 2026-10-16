@@ -19,7 +19,7 @@ Structure:
 
 Every push to `main` deploys the site via `.github/workflows/pages.yml` (manual run: Actions → Deploy to GitHub Pages → Run workflow). Everything in the repository is published except `README.md`, `CLAUDE.md`, `.github/`, `.gitignore` and `.claude/`.
 
-Previews: every open pull request from this repository is also published at `<site>/preview/<random UUID>/`. The link is posted as a comment on the PR, stays the same for later pushes and stops working after the PR is merged or closed. Previews are unlisted (noindex) but not password-protected.
+Previews: every open pull request from this repository is also published at `<site>/preview/<random UUID>/`. The link is posted as a comment on the PR, stays the same for later pushes and stops working after the PR is merged or closed. Previews are unlisted (noindex, nofollow) but not password-protected. Until the official launch, production is also `noindex, nofollow` (meta tag in `index.html`).
 
 Working rules for Claude Code sessions are in `CLAUDE.md`.
 

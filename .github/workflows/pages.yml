@@ -73,7 +73,8 @@ jobs:
 
             dir="_site/preview/$uuid"
             export_tree FETCH_HEAD "$dir"
-            find "$dir" -name '*.html' -exec sed -i 's#<head>#<head>\n  <meta name="robots" content="noindex">#' {} +
+            # Previews are never indexed, even after production allows it
+            find "$dir" -name '*.html' -exec sed -i '/<meta name="robots"/d; s#<head>#<head>\n  <meta name="robots" content="noindex, nofollow">#' {} +
             printf '%s|%s|%s|%s\n' "$pr" "$uuid" "$id" "$sha" >> previews.txt
             echo "PR #$pr -> preview/$uuid/ ($sha)"
           done
