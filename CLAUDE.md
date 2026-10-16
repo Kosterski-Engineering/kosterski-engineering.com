@@ -23,7 +23,7 @@ Hosting is moving from GitHub Pages to Cloudflare Pages (same setup as the `aspi
 
 ## Hosting
 
-**Cloudflare Pages** (target): project `kosterski-engineering`, connected to this repository, no build command, output directory `site`. Push to `main` → production at https://kosterski-engineering.pages.dev (custom domain not connected yet). Push to any other branch → preview at `<branch>.kosterski-engineering.pages.dev` (`/` in the branch name becomes `-`; long names are shortened); Cloudflare posts the link on the PR. `site/_headers` sets the HTTP headers (Cloudflare only).
+**Cloudflare Pages** (target): project `kosterski-engineering-com`, connected to this repository, no build command, output directory `site`. Push to `main` → production at https://kosterski-engineering-com.pages.dev (custom domain not connected yet). Push to any other branch → preview at `<branch>.kosterski-engineering-com.pages.dev` (`/` in the branch name becomes `-`; long names are shortened); the link is in the summary of the `Cloudflare Pages` check on the PR. `site/_headers` sets the HTTP headers (Cloudflare only).
 
 **GitHub Pages** (until the cutover): `.github/workflows/pages.yml` deploys `site/` from `main` and every open PR from this repository. Each PR is published at `<site>/preview/<random UUID>/`; the bot posts and updates the link as a comment on the PR. The link stays the same across pushes and disappears after the PR is merged or closed. Previews are unlisted (noindex), not access-protected.
 
