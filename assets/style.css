@@ -25,7 +25,12 @@ h1{font-size:var(--ke-type-display-size);line-height:var(--ke-type-display-line)
 .ke-btn:hover,.ke-btn:focus-visible{background:#ff7340}
 .ke-btn:focus-visible{outline:2px solid var(--ke-color-white);outline-offset:3px}
 
-footer{padding-top:var(--ke-space-5);padding-bottom:var(--ke-space-6);border-top:1px solid var(--ke-color-graphite);font-size:var(--ke-type-small-size);line-height:var(--ke-type-small-line);color:var(--ke-color-silver)}
+footer{padding-top:var(--ke-space-5);padding-bottom:var(--ke-space-6);border-top:1px solid var(--ke-color-graphite);font-size:var(--ke-type-small-size);line-height:var(--ke-type-small-line);color:var(--ke-color-silver);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:var(--ke-space-4) var(--ke-space-7)}
+footer address{font-style:normal}
+footer p{margin:0}
+footer .company{color:var(--ke-color-white);font-weight:500}
+footer a{color:var(--ke-color-orange);text-decoration:none;white-space:nowrap}
+footer a:hover,footer a:focus-visible{text-decoration:underline}
 
 @media (max-width:600px){
   header,main,footer{padding-left:var(--ke-space-4);padding-right:var(--ke-space-4)}
