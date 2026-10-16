@@ -1,18 +1,34 @@
 name: Deploy to GitHub Pages
 
+# Production = main. Every open pull request from this repository also gets a
+# preview at <site>/preview/<random UUID>/. The UUID is generated once per PR
+# and kept in the bot's comment on that PR, so the link survives later pushes.
+# Each run rebuilds the whole site, so previews of closed PRs disappear.
+
 on:
   push:
     branches: [main]
+  # Runs in the context of main (needed for the github-pages environment).
+  # PR files are only copied with git archive, never executed.
+  pull_request_target:
+    types: [opened, synchronize, reopened, closed]
   workflow_dispatch:
 
 permissions:
   contents: read
   pages: write
   id-token: write
+  pull-requests: write
 
 concurrency:
   group: pages
   cancel-in-progress: false
+
+env:
+  # Repository files that are not part of the website
+  EXCLUDE: README.md CLAUDE.md .github .gitignore .claude
+  GH_TOKEN: ${{ github.token }}
+  GH_REPO: ${{ github.repository }}
 
 jobs:
   deploy:
@@ -22,14 +38,45 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
-      # Publish only the site files, not README or repo config
-      - name: Stage site
+      - id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Assemble site and previews
         run: |
-          mkdir _site
-          cp -r index.html favicon.svg favicon.ico apple-touch-icon.png assets _site/
+          set -euo pipefail
+          export_tree() {  # $1 = git ref, $2 = target directory
+            mkdir -p "$2"
+            git archive "$1" | tar -x -C "$2"
+            (cd "$2" && rm -rf $EXCLUDE)
+          }
 
-      - uses: actions/configure-pages@v5
+          export_tree HEAD _site
+          : > previews.txt
+
+          prs=$(gh pr list --state open --limit 100 --json number,isCrossRepository \
+            --jq '.[] | select(.isCrossRepository | not) | .number')
+          for pr in $prs; do
+            git fetch -q --depth=1 origin "refs/pull/$pr/head"
+            sha=$(git rev-parse --short FETCH_HEAD)
+            ids=$(gh api --paginate "repos/$GH_REPO/issues/$pr/comments" \
+              --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | contains("<!-- pr-preview:"))) | .id')
+            id=$(printf '%s\n' "$ids" | sed -n 1p)
+            uuid=""
+            if [ -n "$id" ]; then
+              uuid=$(gh api "repos/$GH_REPO/issues/comments/$id" --jq .body \
+                | grep -oE '[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}' | sed -n 1p || true)
+            fi
+            [ -n "$uuid" ] || uuid=$(cat /proc/sys/kernel/random/uuid)
+
+            dir="_site/preview/$uuid"
+            export_tree FETCH_HEAD "$dir"
+            find "$dir" -name '*.html' -exec sed -i 's#<head>#<head>\n  <meta name="robots" content="noindex">#' {} +
+            printf '%s|%s|%s|%s\n' "$pr" "$uuid" "$id" "$sha" >> previews.txt
+            echo "PR #$pr -> preview/$uuid/ ($sha)"
+          done
 
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -37,3 +84,34 @@ jobs:
 
       - id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Post preview links
+        env:
+          BASE_URL: ${{ steps.pages.outputs.base_url }}
+          EVENT_ACTION: ${{ github.event.action }}
+          EVENT_PR: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          while IFS='|' read -r pr uuid id sha; do
+            body="<!-- pr-preview:$uuid -->
+          **Preview:** $BASE_URL/preview/$uuid/
+
+          Built from \`$sha\`. The link stays the same for later pushes to this PR and stops working once the PR is merged or closed."
+            if [ -n "$id" ]; then
+              gh api -X PATCH "repos/$GH_REPO/issues/comments/$id" -f body="$body" > /dev/null
+            else
+              gh api -X POST "repos/$GH_REPO/issues/$pr/comments" -f body="$body" > /dev/null
+            fi
+          done < previews.txt
+
+          if [ "$EVENT_ACTION" = "closed" ]; then
+            ids=$(gh api --paginate "repos/$GH_REPO/issues/$EVENT_PR/comments" \
+              --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | contains("<!-- pr-preview:"))) | .id')
+            id=$(printf '%s\n' "$ids" | sed -n 1p)
+            if [ -n "$id" ]; then
+              old=$(gh api "repos/$GH_REPO/issues/comments/$id" --jq .body | sed -n 1p)
+              gh api -X PATCH "repos/$GH_REPO/issues/comments/$id" \
+                -f body="$old
+          Preview removed: this pull request is closed." > /dev/null
+            fi
+          fi
