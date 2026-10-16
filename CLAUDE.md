@@ -19,13 +19,13 @@ Hosting is moving from GitHub Pages to Cloudflare Pages (same setup as the `aspi
 - Website copy is in English. No invented facts, figures, clients or certifications; mark unknowns as `[placeholders]`.
 - Use relative paths for links and assets, so pages work on the custom domain, on `*.pages.dev` and under `/preview/<uuid>/`.
 - Do not edit `site/assets/tokens.css`; it is copied from the brand pack (`07_web/tokens.css`).
-- Before the site goes live on its domain, `site/_headers` keeps `X-Robots-Tag: noindex`. Remove that line at launch.
+- Before the site goes live on its domain, `site/_headers` keeps `X-Robots-Tag: noindex` and `site/index.html` keeps `<meta name="robots" content="noindex, nofollow">`. Remove both at launch.
 
 ## Hosting
 
 **Cloudflare Pages** (target): project `kosterski-engineering-com`, connected to this repository, no build command, output directory `site`. Push to `main` → production at https://kosterski-engineering-com.pages.dev (custom domain not connected yet). Push to any other branch → preview at `<branch>.kosterski-engineering-com.pages.dev` (`/` in the branch name becomes `-`; long names are shortened); the `cloudflare-workers-and-pages` bot posts the branch preview URL as a comment on the PR. `site/_headers` sets the HTTP headers (Cloudflare only).
 
-**GitHub Pages** (until the cutover): `.github/workflows/pages.yml` deploys `site/` from `main` and every open PR from this repository. Each PR is published at `<site>/preview/<random UUID>/`; the bot posts and updates the link as a comment on the PR. The link stays the same across pushes and disappears after the PR is merged or closed. Previews are unlisted (noindex), not access-protected.
+**GitHub Pages** (until the cutover): `.github/workflows/pages.yml` deploys `site/` from `main` and every open PR from this repository. Each PR is published at `<site>/preview/<random UUID>/`; the bot posts and updates the link as a comment on the PR. The link stays the same across pushes and disappears after the PR is merged or closed. Previews are unlisted (noindex, nofollow), not access-protected. Until the official launch, production also has `<meta name="robots" content="noindex, nofollow">` in `site/index.html` (GitHub Pages cannot send an `X-Robots-Tag` header); remove it at launch together with the `_headers` line.
 
 Until the cutover, the `Preview:` link in messages is the Cloudflare branch preview; mention the GitHub Pages preview only if Cloudflare's is not available. After the custom domain is live on Cloudflare, the workflow and GitHub Pages are removed (only with the user's approval).
 

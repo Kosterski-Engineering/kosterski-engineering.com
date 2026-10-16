@@ -26,4 +26,4 @@ Workers & Pages → Create → Pages → Connect to Git → `Kosterski-Engineeri
 
 ### GitHub Pages (until the cutover)
 
-`.github/workflows/pages.yml` publishes `site/` from `main` and from every open pull request (at `<site>/preview/<random UUID>/`, link posted as a PR comment). Repository setting: Settings → Pages → Build and deployment → Source: **GitHub Actions**.
+`.github/workflows/pages.yml` publishes `site/` from `main` and from every open pull request (at `<site>/preview/<random UUID>/`, link posted as a PR comment). Previews are `noindex, nofollow`; until the official launch production is too (meta tag in `site/index.html`). Repository setting: Settings → Pages → Build and deployment → Source: **GitHub Actions**.
