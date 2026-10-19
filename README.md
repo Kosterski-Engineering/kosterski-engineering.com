@@ -9,7 +9,7 @@ python3 -m http.server 8000 -d site
 
 Structure:
 - `site/index.html` — home: services, products, about, contact
-- `site/sysassist.html` — SysAssist product page (links to https://aspice-ai.pages.dev)
+- `site/sysassist/` — SysAssist product page, EN (`index.html`) and PL (`pl/index.html`), with its own CSS, fonts and brand files in `sysassist/assets/`. Moved here from the `aspice.ai` repo, which now redirects to it. No Google Analytics or cookie banner.
 - `site/test-fleet.html` — test and prototype fleet management (draft)
 - `site/legal-notice.html` — legal notice (Impressum)
 - `site/privacy.html` — privacy policy (GDPR)
