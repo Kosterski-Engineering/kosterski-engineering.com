@@ -1,5 +1,5 @@
 # kosterski-engineering.com
-Main KE website — static placeholder ("hello world") page.
+Main KE website — company profile site (English).
 
 Plain HTML + CSS, no build step. The website lives in `site/`; serve it with:
 
@@ -8,7 +8,11 @@ python3 -m http.server 8000 -d site
 ```
 
 Structure:
-- `site/index.html` — landing page
+- `site/index.html` — home: services, products, about, contact
+- `site/sysassist.html` — SysAssist product page (links to https://aspice-ai.pages.dev)
+- `site/test-fleet.html` — test and prototype fleet management (draft)
+- `site/legal-notice.html` — legal notice (Impressum)
+- `site/privacy.html` — privacy policy (GDPR)
 - `site/favicon.svg`, `site/favicon.ico`, `site/apple-touch-icon.png` — favicons from the brand pack
 - `site/assets/tokens.css` — brand tokens from the brand pack (`07_web/tokens.css`, do not edit)
 - `site/assets/style.css` — page layout, uses the `--ke-` tokens
