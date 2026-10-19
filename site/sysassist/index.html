@@ -22,20 +22,38 @@
 <meta property="og:image" content="https://www.kosterski-engineering.com/sysassist/assets/og-image.png">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/tokens.css">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="../assets/chrome.css">
 </head>
 <body>
 
-<header class="topbar">
+  <a class="skip" href="#top">Skip to content</a>
+    <header class="site-header">
+      <div class="site-wrap">
+        <a class="site-brand" href="../index.html">
+          <img src="../assets/img/logo_horizontal_accent_dark_bg.svg" alt="Kosterski Engineering, home" width="174" height="36">
+        </a>
+        <nav class="site-nav" aria-label="Main">
+          <ul>
+          <li><a href="../index.html#services">Services</a></li>
+          <li><a href="../sysassist/" aria-current="page">SysAssist</a></li>
+          <li><a href="../test-fleet.html">Test fleet</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+<div class="topbar">
   <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="SysAssist by Kosterski Engineering">
+    <a class="brand" href="#top" aria-label="SysAssist">
       <img class="k-symbol" src="assets/brand/symbol_accent.svg" alt="" width="27" height="32">
       <span class="brand-name">SysAssist</span>
-      <span class="brand-by">by Kosterski Engineering</span>
     </a>
     <div class="nav-right"><a class="lang" href="pl/" hreflang="pl" lang="pl" title="Polski">PL</a><a class="btn btn-ghost btn-small" href="mailto:contact@kosterski-engineering.com?subject=Pilot%20discussion">Book a call</a></div>
   </div>
-</header>
+</div>
 
 <main id="top">
 
@@ -377,7 +395,7 @@
 
 </main>
 
-<footer class="footer">
+<section class="footer" aria-label="Pilot">
   <div class="wrap">
     <div class="footer-cta">
       <div>
@@ -389,21 +407,49 @@
         <p class="mail">contact@kosterski-engineering.com</p>
       </div>
     </div>
-    <div class="company">
-      <a class="k-lockup" href="../index.html"><img class="ke-logo ke-logo-light" src="assets/brand/logo_horizontal_accent_light_bg.svg" alt="Kosterski Engineering" width="176" height="36"><img class="ke-logo ke-logo-dark" src="assets/brand/logo_horizontal_accent_dark_bg.svg" alt="Kosterski Engineering" width="176" height="36"></a>
-      <div>
-        <p>SysAssist is a product of KOSTERSKI ENGINEERING sp. z o.o.</p>
-        <p>Wyspa Słodowa 7, 50-266 Wrocław, Poland · VAT EU: PL8982307447</p>
-        <p><a href="mailto:contact@kosterski-engineering.com">contact@kosterski-engineering.com</a> · <a href="../index.html">kosterski-engineering.com</a></p>
-      </div>
-      <div>
-        <p>Pre-pilot version — a presentation of the product concept.</p>
-        <p>© 2026 Kosterski Engineering. All rights reserved.</p>
-        <p class="legal-links"><a href="../privacy.html">Privacy policy</a> · <a href="../legal-notice.html">Legal notice</a></p>
-      </div>
+        <div class="product-note">
+      <p>SysAssist is a product of KOSTERSKI ENGINEERING sp. z o.o.</p>
+      <p>Pre-pilot version — a presentation of the product concept.</p>
     </div>
   </div>
-</footer>
+</section>
+
+  <footer class="site-footer">
+    <div class="site-wrap">
+      <div class="site-footer-grid">
+        <div>
+          <h2>Company</h2>
+          <address>
+            <span class="site-company">Kosterski Engineering sp. z o.o.</span><br>
+            Wyspa Słodowa 7, 50-266 Wrocław, Poland<br>
+            VAT ID: PL8982307447<br>
+            <a href="mailto:contact@kosterski-engineering.com">contact@kosterski-engineering.com</a>
+          </address>
+        </div>
+        <div>
+          <h2>Pages</h2>
+          <ul>
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../sysassist/">SysAssist</a></li>
+            <li><a href="../test-fleet.html">Test fleet management</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Legal</h2>
+          <ul>
+            <li><a href="../legal-notice.html">Legal notice</a></li>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-legal">
+        <p>&copy; 2026 Kosterski Engineering sp. z o.o.</p>
+        <p>Embedded systems engineering for automotive</p>
+      </div>
+    </div>
+  </footer>
+
 
 </body>
 </html>

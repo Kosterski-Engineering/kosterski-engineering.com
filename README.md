@@ -9,13 +9,14 @@ python3 -m http.server 8000 -d site
 
 Structure:
 - `site/index.html` — home: services, products, about, contact
-- `site/sysassist/` — SysAssist product page, EN (`index.html`) and PL (`pl/index.html`), with its own CSS, fonts and brand files in `sysassist/assets/`. Moved here from the `aspice.ai` repo, which now redirects to it. No Google Analytics or cookie banner.
+- `site/sysassist/` — SysAssist product page, EN (`index.html`) and PL (`pl/index.html`), product content and styles from the `aspice.ai` repo (which now redirects here) with the shared site header and footer; its own CSS, fonts and symbol in `sysassist/assets/`. No Google Analytics or cookie banner.
 - `site/test-fleet.html` — test and prototype fleet management (draft)
 - `site/legal-notice.html` — legal notice (Impressum)
 - `site/privacy.html` — privacy policy (GDPR)
 - `site/favicon.svg`, `site/favicon.ico`, `site/apple-touch-icon.png` — favicons from the brand pack
 - `site/assets/tokens.css` — brand tokens from the brand pack (`07_web/tokens.css`, do not edit)
 - `site/assets/style.css` — page layout, uses the `--ke-` tokens
+- `site/assets/chrome.css` — shared header, navigation and footer (`site-` classes), used by every page including SysAssist
 - `site/assets/fonts/` — IBM Plex Sans / Mono (woff2, self-hosted)
 - `site/assets/img/logo_horizontal_accent_dark_bg.svg` — horizontal logo for dark ground (brand pack 2026-10-14)
 - `site/_headers` — HTTP headers for Cloudflare Pages

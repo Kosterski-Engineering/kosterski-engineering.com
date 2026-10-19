@@ -1,0 +1,43 @@
+/* Site header, navigation and footer, shared by every page (KE pages and SysAssist).
+   Class names are prefixed with site- so they do not collide with the SysAssist stylesheet.
+   Needs tokens.css loaded first. */
+.site-wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 var(--ke-gutter)}
+
+.skip{position:absolute;left:var(--ke-space-4);top:-48px;z-index:10;background:var(--ke-color-orange);color:var(--ke-color-ink);padding:var(--ke-space-2) var(--ke-space-4);border-radius:var(--ke-radius-sm);font-family:var(--ke-font-sans);font-weight:600;text-decoration:none}
+.skip:focus{top:var(--ke-space-4)}
+
+/* Header and navigation */
+.site-header{position:relative;z-index:2;background:var(--ke-color-ink);font-family:var(--ke-font-sans)}
+.hero .site-header{background:transparent}
+.site-header .site-wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--ke-space-3) var(--ke-space-6);padding-top:var(--ke-space-5);padding-bottom:var(--ke-space-5)}
+.site-brand{display:inline-block;padding:9px 0}
+.site-brand img{height:36px;width:auto;display:block}
+.site-nav ul{list-style:none;margin:0;padding:0;font-size:15px;line-height:24px;display:flex;flex-wrap:wrap;gap:var(--ke-space-2) var(--ke-space-5)}
+.site-nav a{color:var(--ke-color-silver);text-decoration:none;font-weight:500;font-size:15px;line-height:24px;padding:var(--ke-space-1) 0;border-bottom:2px solid transparent}
+.site-nav a:hover{color:var(--ke-color-white)}
+.site-nav a[aria-current="page"]{color:var(--ke-color-white);border-bottom-color:var(--ke-color-orange)}
+.site-header :focus-visible,.site-footer :focus-visible{outline:2px solid var(--ke-color-white);outline-offset:3px}
+
+/* Footer */
+.site-footer{background:var(--ke-color-ink);border-top:1px solid var(--ke-color-graphite);font-family:var(--ke-font-sans);font-size:var(--ke-type-small-size);line-height:var(--ke-type-small-line);color:var(--ke-color-silver)}
+.site-footer .site-wrap{padding-top:var(--ke-space-7);padding-bottom:var(--ke-space-6)}
+.site-footer-grid{display:grid;gap:var(--ke-space-6);grid-template-columns:2fr 1fr 1fr;padding-bottom:var(--ke-space-6);border-bottom:1px solid var(--ke-color-graphite)}
+.site-footer h2{font-family:var(--ke-font-mono);font-size:var(--ke-type-label-size);line-height:var(--ke-type-label-line);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ke-color-white);margin:0 0 var(--ke-space-3)}
+.site-footer address{font-style:normal}
+.site-footer ul{list-style:none;margin:0;padding:0}
+.site-footer li{margin:0 0 var(--ke-space-1)}
+.site-footer a{color:var(--ke-color-silver);text-decoration:none}
+.site-footer a:hover{color:var(--ke-color-white);text-decoration:underline}
+.site-company{color:var(--ke-color-white);font-weight:500}
+.site-legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--ke-space-2) var(--ke-space-5);padding-top:var(--ke-space-4)}
+.site-legal p{margin:0}
+
+@media (max-width:860px){
+  .site-footer-grid{grid-template-columns:1fr 1fr}
+  .site-footer-grid>:first-child{grid-column:1/-1}
+}
+@media (max-width:600px){
+  .site-wrap{padding-left:var(--ke-space-4);padding-right:var(--ke-space-4)}
+  .site-header .site-wrap{padding-top:var(--ke-space-4);padding-bottom:var(--ke-space-4)}
+  .site-nav ul{gap:var(--ke-space-2) var(--ke-space-4)}
+}

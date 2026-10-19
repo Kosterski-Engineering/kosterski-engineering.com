@@ -1,4 +1,4 @@
-/* Site layout. Colours, type and spacing come from tokens.css (brand pack 2026-10-14). */
+/* Page layout (header, navigation and footer are in chrome.css). Colours, type and spacing come from tokens.css (brand pack 2026-10-14). */
 @font-face{font-family:"IBM Plex Sans";font-weight:400;font-display:swap;src:url(fonts/IBMPlexSans-Regular.woff2) format("woff2")}
 @font-face{font-family:"IBM Plex Sans";font-weight:500;font-display:swap;src:url(fonts/IBMPlexSans-Medium.woff2) format("woff2")}
 @font-face{font-family:"IBM Plex Sans";font-weight:600;font-display:swap;src:url(fonts/IBMPlexSans-SemiBold.woff2) format("woff2")}
@@ -11,20 +11,7 @@ img{max-width:100%}
 :focus-visible{outline:2px solid var(--ke-color-orange-deep);outline-offset:3px}
 .ke-inverse :focus-visible{outline-color:var(--ke-color-white)}
 
-.skip{position:absolute;left:var(--ke-space-4);top:-48px;z-index:10;background:var(--ke-color-orange);color:var(--ke-color-ink);padding:var(--ke-space-2) var(--ke-space-4);border-radius:var(--ke-radius-sm);font-weight:600;text-decoration:none}
-.skip:focus{top:var(--ke-space-4)}
-
 .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 var(--ke-gutter)}
-
-/* Header and navigation */
-.site-header{position:relative;z-index:2}
-.site-header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--ke-space-3) var(--ke-space-6);padding-top:var(--ke-space-5);padding-bottom:var(--ke-space-5)}
-.brand{display:inline-block;padding:9px 0}
-.brand img{height:36px;width:auto;display:block}
-.nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:var(--ke-space-2) var(--ke-space-5)}
-.nav a{color:var(--ke-color-silver);text-decoration:none;font-weight:500;font-size:15px;padding:var(--ke-space-1) 0;border-bottom:2px solid transparent}
-.nav a:hover{color:var(--ke-color-white)}
-.nav a[aria-current="page"]{color:var(--ke-color-white);border-bottom-color:var(--ke-color-orange)}
 
 /* Hero */
 .hero{position:relative;overflow:hidden}
@@ -97,29 +84,12 @@ img{max-width:100%}
 .prose .meta{color:var(--ke-text-muted);font-size:var(--ke-type-small-size)}
 .prose address{font-style:normal;margin-bottom:var(--ke-space-3)}
 
-/* Footer */
-.site-footer{border-top:1px solid var(--ke-color-graphite);font-size:var(--ke-type-small-size);line-height:var(--ke-type-small-line);color:var(--ke-color-silver)}
-.site-footer .wrap{padding-top:var(--ke-space-7);padding-bottom:var(--ke-space-6)}
-.footer-grid{display:grid;gap:var(--ke-space-6);grid-template-columns:2fr 1fr 1fr;padding-bottom:var(--ke-space-6);border-bottom:1px solid var(--ke-color-graphite)}
-.site-footer h2{font-family:var(--ke-font-mono);font-size:var(--ke-type-label-size);line-height:var(--ke-type-label-line);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ke-color-white);margin:0 0 var(--ke-space-3)}
-.site-footer address{font-style:normal}
-.site-footer ul{list-style:none;margin:0;padding:0}
-.site-footer li{margin-bottom:var(--ke-space-1)}
-.site-footer a{color:var(--ke-color-silver);text-decoration:none}
-.site-footer a:hover{color:var(--ke-color-white);text-decoration:underline}
-.site-footer .company{color:var(--ke-color-white);font-weight:500}
-.site-footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--ke-space-2) var(--ke-space-5);padding-top:var(--ke-space-4)}
-.site-footer .legal p{margin:0}
 
 @media (max-width:860px){
   .split{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .footer-grid>:first-child{grid-column:1/-1}
 }
 @media (max-width:600px){
   .wrap{padding-left:var(--ke-space-4);padding-right:var(--ke-space-4)}
-  .site-header .wrap{padding-top:var(--ke-space-4);padding-bottom:var(--ke-space-4)}
-  .nav ul{gap:var(--ke-space-2) var(--ke-space-4)}
   .hero-body{padding-top:var(--ke-space-7);padding-bottom:var(--ke-space-8)}
   .hero h1{font-size:var(--ke-type-h1-size);line-height:var(--ke-type-h1-line)}
   .hero .lead{font-size:var(--ke-type-h3-size);line-height:var(--ke-type-h3-line)}

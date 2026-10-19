@@ -403,3 +403,7 @@ h2{font-family:var(--font-display);font-weight:600;font-size:clamp(26px,3vw,36px
 .cc p a{color:var(--ink);}
 .cc-actions{display:flex;flex-wrap:wrap;gap:10px;}
 button.btn-ghost{background:transparent;cursor:pointer;} button.btn-primary{cursor:pointer;}
+
+/* kosterski-engineering.com: product note below the pilot call-to-action (replaces the SysAssist footer; the shared site footer follows) */
+.product-note{margin:28px 0 0;font-size:13px;color:var(--ink-2);}
+.product-note p{margin:0 0 4px;}
