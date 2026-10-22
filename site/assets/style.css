@@ -100,3 +100,12 @@ img{max-width:100%}
   .facts div{grid-template-columns:1fr;gap:0}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Founder cards in the About section */
+.founders{display:grid;gap:var(--ke-space-5);grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-top:var(--ke-space-7)}
+.founder h3{margin-bottom:var(--ke-space-3)}
+.founder dl{margin:var(--ke-space-2) 0 0;border-top:1px solid var(--ke-border);padding-top:var(--ke-space-3)}
+.founder dt{font-family:var(--ke-font-mono);font-size:var(--ke-type-label-size);line-height:var(--ke-type-label-line);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ke-text-muted)}
+.founder dd{margin:var(--ke-space-1) 0 var(--ke-space-3);font-size:15px;line-height:22px}
+.founder p.more{color:var(--ke-text)}
+@media (max-width:600px){.founders{grid-template-columns:1fr}}
