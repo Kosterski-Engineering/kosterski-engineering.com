@@ -14,9 +14,11 @@
   <link rel="preload" href="assets/fonts/IBMPlexSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/tokens.css">
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/chrome.css">
 </head>
 <body>
-  <div class="page">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="hero ke-inverse">
     <svg class="motif" viewBox="0 0 640 480" aria-hidden="true">
       <g stroke-width="20">
         <line x1="360" y1="-40" x2="700" y2="395"/>
@@ -25,28 +27,170 @@
         <line x1="480" y1="-40" x2="820" y2="395"/>
       </g>
     </svg>
-
-    <header>
-      <a class="brand" href="./">
-        <img src="assets/img/logo_horizontal_accent_dark_bg.svg" alt="Kosterski Engineering" width="174" height="36">
-      </a>
+    <header class="site-header">
+      <div class="site-wrap">
+        <a class="site-brand" href="index.html">
+          <img src="assets/img/logo_horizontal_accent_dark_bg.svg" alt="Kosterski Engineering, home" width="174" height="36">
+        </a>
+        <nav class="site-nav" aria-label="Main">
+          <ul>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="sysassist/">SysAssist</a></li>
+          <li><a href="prototype-fleet.html">Prototype fleet</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-
-    <main>
+    <div class="wrap hero-body">
       <p class="ke-label">Embedded · Automotive · Systems engineering</p>
       <h1>Systems. Software. Delivered.</h1>
       <p class="lead">Your engineering partner for automotive embedded systems.</p>
-      <a class="ke-btn" href="mailto:contact@kosterski-engineering.com">Get in touch</a>
-    </main>
-
-    <footer>
-      <address>
-        <span class="company">Kosterski Engineering sp. z o.o.</span><br>
-        Wyspa Słodowa 7, 50-266 Wrocław, Poland<br>
-        VAT ID: PL8982307447 · <a href="mailto:contact@kosterski-engineering.com">contact@kosterski-engineering.com</a>
-      </address>
-      <p>&copy; 2026 Kosterski Engineering sp. z o.o. · Embedded systems engineering for automotive</p>
-    </footer>
+      <div class="actions">
+        <a class="ke-btn" href="#contact">Get in touch</a>
+        <a class="btn-ghost" href="#services">What we do</a>
+      </div>
+    </div>
   </div>
+  <main id="main">
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <p class="ke-label">Services</p>
+        <h2 id="services-title">What we do</h2>
+        <p class="intro">We support automotive OEMs and suppliers in the development of embedded systems: from requirements and architecture to software and the coordination of engineering teams.</p>
+        <div class="grid">
+          <article class="card">
+            <p class="ke-label">01</p>
+            <h3>Systems engineering</h3>
+            <p>Requirements analysis, system architecture and traceability along the Automotive SPICE system engineering processes.</p>
+          </article>
+          <article class="card">
+            <p class="ke-label">02</p>
+            <h3>Embedded software</h3>
+            <p>Development of software for automotive control units, from specification to integration.</p>
+          </article>
+          <article class="card">
+            <p class="ke-label">03</p>
+            <h3>Project and team leadership</h3>
+            <p>Planning and running engineering projects and teams: scope, schedule, dependencies and reporting to the customer.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="solutions" aria-labelledby="solutions-title">
+      <div class="wrap">
+        <p class="ke-label">Products and solutions</p>
+        <h2 id="solutions-title">Tools built from project practice</h2>
+        <p class="intro">Alongside engineering services, we build tools for the repetitive parts of automotive development work.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>SysAssist</h3>
+            <p>An AI assistant for systems engineers working along Automotive SPICE SYS.1, SYS.2 and SYS.3. It works in your ALM, drafts and reviews requirements, and every suggestion waits for your decision.</p>
+            <a class="more" href="sysassist/">About SysAssist &rarr;</a>
+          </article>
+          <article class="card">
+            <h3>Prototype fleet management</h3>
+            <p>We register and insure test and prototype vehicles in Poland, including pre-homologation vehicles, and handle their instrumentation and test drives in Poland and across Europe.</p>
+            <a class="more" href="prototype-fleet.html">About prototype fleet management &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap split">
+        <div>
+          <p class="ke-label">About us</p>
+          <h2 id="about-title">Engineers who have done the work</h2>
+          <p>Kosterski Engineering sp. z o.o. is an engineering company based in Wrocław, Poland. It was founded by engineers who have spent their careers inside automotive development projects: from embedded software and system testing to system architecture, requirements and team leadership at OEMs and suppliers.</p>
+          <p>We work with customers in English, German and Polish.</p>
+        </div>
+        <dl class="facts">
+          <div><dt>Company</dt><dd>Kosterski Engineering sp. z o.o.</dd></div>
+          <div><dt>Location</dt><dd>Wrocław, Poland</dd></div>
+          <div><dt>Focus</dt><dd>Embedded systems engineering for automotive</dd></div>
+          <div><dt>Languages</dt><dd>English, German, Polish</dd></div>
+        </dl>
+      </div>
+      <div class="wrap founders">
+        <article class="card founder">
+          <p class="ke-label">Founder &amp; Managing Director</p>
+          <h3>Szymon Kosterski</h3>
+          <p>Systems and requirements engineer with more than 13 years of international experience at the interface between OEMs and suppliers. He has worked along the whole V-model: system qualification testing, problem resolution on an ADAS project, Automotive Ethernet (SOME/IP) architecture, system and software requirements for passive safety, drivelines and high-voltage inverters for electric vehicles, and most recently as team lead for ADAS feature integration and vehicle calibration.</p>
+          <dl>
+            <dt>Experience at</dt><dd>Bertrandt, ZF, Flex, GKN Driveline, BRUSA HyPower, Aptiv</dd>
+            <dt>Focus</dt><dd>Automotive SPICE, ISO 26262, requirements management (DOORS, Polarion, Windchill RV&amp;S, PREEvision); PRINCE2 certified</dd>
+            <dt>Education</dt><dd>M.Sc. Electronics and Telecommunication, Universität der Bundeswehr München; MBA, Central Connecticut State University</dd>
+          </dl>
+          <a class="more" href="https://www.linkedin.com/in/szymon-kosterski/" target="_blank" rel="noopener">LinkedIn profile &rarr;</a>
+        </article>
+        <article class="card founder">
+          <p class="ke-label">Technical Director</p>
+          <h3>Dariusz Synowiec</h3>
+          <p>Embedded systems engineer with more than 17 years in automotive. He started with safety-critical software for an ASIL D airbag ECU, developed AUTOSAR software, CAN and FlexRay communication and bootloaders, and moved on to system and software architecture: SysML models, functional decomposition and traceability from requirements to architecture. As CTO he built an ISO 27001 ISMS and contributed to a TISAX certification passed at the first attempt. Most recently he worked on ECU flashing and FOTA under ISO/SAE 21434 and on tuning ADAS functions (ACC, AEB, LKA).</p>
+          <dl>
+            <dt>Experience at</dt><dd>TRW, ZF, Embedded Team, Stellantis, Aptiv</dd>
+            <dt>Focus</dt><dd>System architecture, functional safety (ASIL D), cybersecurity (ISO/SAE 21434), Automotive SPICE; Automotive Cybersecurity Professional (ISO/SAE 21434 Foundation Level)</dd>
+            <dt>Education</dt><dd>M.Sc. Information Technology, Częstochowa University of Technology; B.Sc. Electronics and Telecommunication, Silesian University of Technology</dd>
+          </dl>
+          <a class="more" href="https://www.linkedin.com/in/dariuszsynowiec/" target="_blank" rel="noopener">LinkedIn profile &rarr;</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section alt" id="contact" aria-labelledby="contact-title">
+      <div class="wrap split">
+        <div>
+          <p class="ke-label">Contact</p>
+          <h2 id="contact-title">Talk to us about your project</h2>
+          <p>Tell us briefly what you are working on and where you need support.</p>
+          <div class="actions">
+            <a class="ke-btn" href="mailto:contact@kosterski-engineering.com">contact@kosterski-engineering.com</a>
+          </div>
+        </div>
+        <dl class="facts">
+          <div><dt>E-mail</dt><dd><a href="mailto:contact@kosterski-engineering.com">contact@kosterski-engineering.com</a></dd></div>
+          <div><dt>Address</dt><dd>Kosterski Engineering sp. z o.o.<br>Wyspa Słodowa 7<br>50-266 Wrocław<br>Poland</dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-wrap">
+      <div class="site-footer-grid">
+        <div>
+          <h2>Company</h2>
+          <address>
+            <span class="site-company">Kosterski Engineering sp. z o.o.</span><br>
+            Wyspa Słodowa 7, 50-266 Wrocław, Poland<br>
+            VAT ID: PL8982307447<br>
+            <a href="mailto:contact@kosterski-engineering.com">contact@kosterski-engineering.com</a>
+          </address>
+        </div>
+        <div>
+          <h2>Pages</h2>
+          <ul>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="sysassist/">SysAssist</a></li>
+            <li><a href="prototype-fleet.html">Prototype fleet management</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Legal</h2>
+          <ul>
+            <li><a href="legal-notice.html">Legal notice</a></li>
+            <li><a href="privacy.html">Privacy policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-legal">
+        <p>&copy; 2026 Kosterski Engineering sp. z o.o.</p>
+        <p>Embedded systems engineering for automotive</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
