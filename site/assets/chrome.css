@@ -1,4 +1,4 @@
-/* Site header, navigation and footer, shared by every page (KE pages and SysAssist).
+/* Site header, navigation, hero and footer, shared by every page (KE pages and SysAssist).
    Class names are prefixed with site- so they do not collide with the SysAssist stylesheet.
    Needs tokens.css loaded first. */
 .site-wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 var(--ke-gutter)}
@@ -8,7 +8,7 @@
 
 /* Header and navigation */
 .site-header{position:relative;z-index:2;background:var(--ke-color-ink);font-family:var(--ke-font-sans)}
-.hero .site-header{background:transparent}
+.site-hero .site-header{background:transparent}
 .site-header .site-wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--ke-space-3) var(--ke-space-6);padding-top:var(--ke-space-5);padding-bottom:var(--ke-space-5)}
 .site-brand{display:inline-block;padding:9px 0}
 .site-brand img{height:36px;width:auto;display:block}
@@ -17,6 +17,26 @@
 .site-nav a:hover{color:var(--ke-color-white)}
 .site-nav a[aria-current="page"]{color:var(--ke-color-white);border-bottom-color:var(--ke-color-orange)}
 .site-header :focus-visible,.site-footer :focus-visible{outline:2px solid var(--ke-color-white);outline-offset:3px}
+
+/* Hero: the dark area under the navigation, the same on every page.
+   Font, size and spacing are set here in full, so the SysAssist stylesheet does not change them.
+   min-height is the home hero (two-line heading, two-line lead, buttons), so pages with less text keep the same dark area. */
+.site-hero{position:relative;overflow:hidden;font-family:var(--ke-font-sans);font-size:var(--ke-type-body-size);line-height:var(--ke-type-body-line)}
+/* Motif crosses the bottom-right corner of the hero, clear of the logo and navigation */
+.site-motif{position:absolute;bottom:0;right:0;width:min(45vw,520px);height:auto;max-width:none;transform:scaleY(-1);pointer-events:none}
+.site-motif line{stroke:var(--ke-color-orange)}
+.site-hero-body{position:relative;padding-top:var(--ke-space-8);padding-bottom:var(--ke-space-9);min-height:488px;display:flex;flex-direction:column;align-items:flex-start}
+.site-hero .ke-label{color:var(--ke-color-silver);margin:0 0 var(--ke-space-5)}
+.site-hero h1{font-family:var(--ke-font-sans);font-weight:600;font-size:var(--ke-type-display-size);line-height:var(--ke-type-display-line);letter-spacing:normal;text-wrap:wrap;color:var(--ke-color-white);margin:0 0 var(--ke-space-4);max-width:18ch}
+.site-lead{font-size:var(--ke-type-h2-size);line-height:var(--ke-type-h2-line);color:var(--ke-color-silver);margin:0 0 var(--ke-space-7);max-width:40ch}
+/* Buttons sit at the bottom of the hero, so they are in the same place on every page, whatever the heading length */
+.site-actions{display:flex;flex-wrap:wrap;gap:var(--ke-space-4);align-items:center;margin:auto 0 0}
+.site-hero .ke-btn{padding:var(--ke-space-3) var(--ke-space-5);color:var(--ke-color-ink)}
+.site-hero .ke-btn:hover{background:#ff7340}
+.site-btn-ghost{display:inline-block;padding:11px 19px;border:1px solid var(--ke-color-steel);border-radius:var(--ke-radius-sm);font-weight:600;text-decoration:none}
+.site-hero .site-btn-ghost{color:var(--ke-color-white)}
+.site-hero .site-btn-ghost:hover{border-color:var(--ke-color-white)}
+.site-hero :focus-visible{outline:2px solid var(--ke-color-white);outline-offset:3px}
 
 /* Footer */
 .site-footer{background:var(--ke-color-ink);border-top:1px solid var(--ke-color-graphite);font-family:var(--ke-font-sans);font-size:var(--ke-type-small-size);line-height:var(--ke-type-small-line);color:var(--ke-color-silver)}
@@ -40,4 +60,8 @@
   .site-wrap{padding-left:var(--ke-space-4);padding-right:var(--ke-space-4)}
   .site-header .site-wrap{padding-top:var(--ke-space-4);padding-bottom:var(--ke-space-4)}
   .site-nav ul{gap:var(--ke-space-2) var(--ke-space-4)}
+  .site-hero-body{padding-top:var(--ke-space-7);padding-bottom:var(--ke-space-8);min-height:404px}
+  .site-hero h1{font-size:var(--ke-type-h1-size);line-height:var(--ke-type-h1-line)}
+  .site-lead{font-size:var(--ke-type-h3-size);line-height:var(--ke-type-h3-line)}
+  .site-motif{width:50vw;opacity:.5}
 }

@@ -13,24 +13,11 @@ img{max-width:100%}
 
 .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 var(--ke-gutter)}
 
-/* Hero */
-.hero{position:relative;overflow:hidden}
-/* Motif crosses the bottom-right corner of the hero, clear of the logo and navigation */
-.motif{position:absolute;bottom:0;right:0;width:min(45vw,520px);height:auto;transform:scaleY(-1);pointer-events:none}
-.motif line{stroke:var(--ke-color-orange)}
-/* Same hero on every page: min-height is the home hero (two-line heading, two-line lead, buttons), so pages with less text keep the same dark area */
-.hero-body{position:relative;padding-top:var(--ke-space-8);padding-bottom:var(--ke-space-9);min-height:488px}
-.hero .ke-label{color:var(--ke-color-silver);margin:0 0 var(--ke-space-5)}
-.hero h1{font-size:var(--ke-type-display-size);line-height:var(--ke-type-display-line);margin:0 0 var(--ke-space-4);max-width:18ch}
-.hero .lead{font-size:var(--ke-type-h2-size);line-height:var(--ke-type-h2-line);color:var(--ke-color-silver);margin:0 0 var(--ke-space-7);max-width:40ch}
-
+/* Buttons (the hero has its own in chrome.css) */
 .actions{display:flex;flex-wrap:wrap;gap:var(--ke-space-4);align-items:center}
 .ke-btn{padding:var(--ke-space-3) var(--ke-space-5)}
 .ke-inverse .ke-btn{color:var(--ke-color-ink)}
 .ke-btn:hover{background:#ff7340}
-.btn-ghost{display:inline-block;padding:11px 19px;border:1px solid var(--ke-color-steel);border-radius:var(--ke-radius-sm);font-weight:600;text-decoration:none}
-.ke-inverse .btn-ghost{color:var(--ke-color-white)}
-.ke-inverse .btn-ghost:hover{border-color:var(--ke-color-white)}
 
 /* Content sections */
 .section{padding:var(--ke-space-8) 0}
@@ -82,10 +69,6 @@ img{max-width:100%}
 }
 @media (max-width:600px){
   .wrap{padding-left:var(--ke-space-4);padding-right:var(--ke-space-4)}
-  .hero-body{padding-top:var(--ke-space-7);padding-bottom:var(--ke-space-8);min-height:404px}
-  .hero h1{font-size:var(--ke-type-h1-size);line-height:var(--ke-type-h1-line)}
-  .hero .lead{font-size:var(--ke-type-h3-size);line-height:var(--ke-type-h3-line)}
-  .motif{width:50vw;opacity:.5}
   .section{padding:var(--ke-space-7) 0}
   .facts div{grid-template-columns:1fr;gap:0}
 }
