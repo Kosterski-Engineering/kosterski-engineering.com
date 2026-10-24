@@ -18,13 +18,11 @@ img{max-width:100%}
 /* Motif crosses the bottom-right corner of the hero, clear of the logo and navigation */
 .motif{position:absolute;bottom:0;right:0;width:min(45vw,520px);height:auto;transform:scaleY(-1);pointer-events:none}
 .motif line{stroke:var(--ke-color-orange)}
-.hero-body{position:relative;padding-top:var(--ke-space-8);padding-bottom:var(--ke-space-9)}
+/* Same hero on every page: min-height is the home hero (two-line heading, two-line lead, buttons), so pages with less text keep the same dark area */
+.hero-body{position:relative;padding-top:var(--ke-space-8);padding-bottom:var(--ke-space-9);min-height:488px}
 .hero .ke-label{color:var(--ke-color-silver);margin:0 0 var(--ke-space-5)}
 .hero h1{font-size:var(--ke-type-display-size);line-height:var(--ke-type-display-line);margin:0 0 var(--ke-space-4);max-width:18ch}
 .hero .lead{font-size:var(--ke-type-h2-size);line-height:var(--ke-type-h2-line);color:var(--ke-color-silver);margin:0 0 var(--ke-space-7);max-width:40ch}
-.hero.sub .hero-body{padding-top:var(--ke-space-7);padding-bottom:var(--ke-space-8)}
-.hero.sub h1{font-size:var(--ke-type-h1-size);line-height:var(--ke-type-h1-line);max-width:24ch}
-.hero.sub .lead{font-size:var(--ke-type-h3-size);line-height:var(--ke-type-h3-line);margin-bottom:var(--ke-space-6);max-width:56ch}
 
 .actions{display:flex;flex-wrap:wrap;gap:var(--ke-space-4);align-items:center}
 .ke-btn{padding:var(--ke-space-3) var(--ke-space-5)}
@@ -84,11 +82,9 @@ img{max-width:100%}
 }
 @media (max-width:600px){
   .wrap{padding-left:var(--ke-space-4);padding-right:var(--ke-space-4)}
-  .hero-body{padding-top:var(--ke-space-7);padding-bottom:var(--ke-space-8)}
+  .hero-body{padding-top:var(--ke-space-7);padding-bottom:var(--ke-space-8);min-height:404px}
   .hero h1{font-size:var(--ke-type-h1-size);line-height:var(--ke-type-h1-line)}
   .hero .lead{font-size:var(--ke-type-h3-size);line-height:var(--ke-type-h3-line)}
-  .hero.sub h1{font-size:28px;line-height:36px}
-  .hero.sub .lead{font-size:var(--ke-type-body-size);line-height:var(--ke-type-body-line)}
   .motif{width:50vw;opacity:.5}
   .section{padding:var(--ke-space-7) 0}
   .facts div{grid-template-columns:1fr;gap:0}
