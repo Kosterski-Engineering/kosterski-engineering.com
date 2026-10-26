@@ -37,6 +37,9 @@
 .site-hero .site-btn-ghost{color:var(--ke-color-white)}
 .site-hero .site-btn-ghost:hover{border-color:var(--ke-color-white)}
 .site-hero :focus-visible{outline:2px solid var(--ke-color-white);outline-offset:3px}
+/* Compact hero for the legal pages: no buttons, so no reserved height */
+.site-hero-compact .site-hero-body{min-height:288px;padding-bottom:var(--ke-space-7)}
+.site-hero-compact .site-lead{margin-bottom:0}
 
 /* Footer */
 .site-footer{background:var(--ke-color-ink);border-top:1px solid var(--ke-color-graphite);font-family:var(--ke-font-sans);font-size:var(--ke-type-small-size);line-height:var(--ke-type-small-line);color:var(--ke-color-silver)}
@@ -64,4 +67,5 @@
   .site-hero h1{font-size:var(--ke-type-h1-size);line-height:var(--ke-type-h1-line)}
   .site-lead{font-size:var(--ke-type-h3-size);line-height:var(--ke-type-h3-line)}
   .site-motif{width:50vw;opacity:.5}
+  .site-hero-compact .site-hero-body{min-height:0;padding-bottom:var(--ke-space-6)}
 }
