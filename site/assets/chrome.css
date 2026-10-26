@@ -1,0 +1,71 @@
+/* Site header, navigation, hero and footer, shared by every page (KE pages and SysAssist).
+   Class names are prefixed with site- so they do not collide with the SysAssist stylesheet.
+   Needs tokens.css loaded first. */
+.site-wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 var(--ke-gutter)}
+
+.skip{position:absolute;left:var(--ke-space-4);top:-48px;z-index:10;background:var(--ke-color-orange);color:var(--ke-color-ink);padding:var(--ke-space-2) var(--ke-space-4);border-radius:var(--ke-radius-sm);font-family:var(--ke-font-sans);font-weight:600;text-decoration:none}
+.skip:focus{top:var(--ke-space-4)}
+
+/* Header and navigation */
+.site-header{position:relative;z-index:2;background:var(--ke-color-ink);font-family:var(--ke-font-sans)}
+.site-hero .site-header{background:transparent}
+.site-header .site-wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--ke-space-3) var(--ke-space-6);padding-top:var(--ke-space-5);padding-bottom:var(--ke-space-5)}
+.site-brand{display:inline-block;padding:9px 0}
+.site-brand img{height:36px;width:auto;display:block}
+.site-nav ul{list-style:none;margin:0;padding:0;font-size:15px;line-height:24px;display:flex;flex-wrap:wrap;gap:var(--ke-space-2) var(--ke-space-5)}
+.site-nav a{color:var(--ke-color-silver);text-decoration:none;font-weight:500;font-size:15px;line-height:24px;padding:var(--ke-space-1) 0;border-bottom:2px solid transparent}
+.site-nav a:hover{color:var(--ke-color-white)}
+.site-nav a[aria-current="page"]{color:var(--ke-color-white);border-bottom-color:var(--ke-color-orange)}
+.site-header :focus-visible,.site-footer :focus-visible{outline:2px solid var(--ke-color-white);outline-offset:3px}
+
+/* Hero: the dark area under the navigation, the same on every page.
+   Font, size and spacing are set here in full, so the SysAssist stylesheet does not change them.
+   min-height is the home hero (two-line heading, two-line lead, buttons), so pages with less text keep the same dark area. */
+.site-hero{position:relative;overflow:hidden;font-family:var(--ke-font-sans);font-size:var(--ke-type-body-size);line-height:var(--ke-type-body-line)}
+/* Motif crosses the bottom-right corner of the hero, clear of the logo and navigation */
+.site-motif{position:absolute;bottom:0;right:0;width:min(45vw,520px);height:auto;max-width:none;transform:scaleY(-1);pointer-events:none}
+.site-motif line{stroke:var(--ke-color-orange)}
+.site-hero-body{position:relative;padding-top:var(--ke-space-8);padding-bottom:var(--ke-space-9);min-height:488px;display:flex;flex-direction:column;align-items:flex-start}
+.site-hero .ke-label{color:var(--ke-color-silver);margin:0 0 var(--ke-space-5)}
+.site-hero h1{font-family:var(--ke-font-sans);font-weight:600;font-size:var(--ke-type-display-size);line-height:var(--ke-type-display-line);letter-spacing:normal;text-wrap:wrap;color:var(--ke-color-white);margin:0 0 var(--ke-space-4);max-width:18ch}
+.site-lead{font-size:var(--ke-type-h2-size);line-height:var(--ke-type-h2-line);color:var(--ke-color-silver);margin:0 0 var(--ke-space-7);max-width:40ch}
+/* Buttons sit at the bottom of the hero, so they are in the same place on every page, whatever the heading length */
+.site-actions{display:flex;flex-wrap:wrap;gap:var(--ke-space-4);align-items:center;margin:auto 0 0}
+.site-hero .ke-btn{padding:var(--ke-space-3) var(--ke-space-5);color:var(--ke-color-ink)}
+.site-hero .ke-btn:hover{background:#ff7340}
+.site-btn-ghost{display:inline-block;padding:11px 19px;border:1px solid var(--ke-color-steel);border-radius:var(--ke-radius-sm);font-weight:600;text-decoration:none}
+.site-hero .site-btn-ghost{color:var(--ke-color-white)}
+.site-hero .site-btn-ghost:hover{border-color:var(--ke-color-white)}
+.site-hero :focus-visible{outline:2px solid var(--ke-color-white);outline-offset:3px}
+/* Compact hero for the legal pages: no buttons, so no reserved height */
+.site-hero-compact .site-hero-body{min-height:288px;padding-bottom:var(--ke-space-7)}
+.site-hero-compact .site-lead{margin-bottom:0}
+
+/* Footer */
+.site-footer{background:var(--ke-color-ink);border-top:1px solid var(--ke-color-graphite);font-family:var(--ke-font-sans);font-size:var(--ke-type-small-size);line-height:var(--ke-type-small-line);color:var(--ke-color-silver)}
+.site-footer .site-wrap{padding-top:var(--ke-space-7);padding-bottom:var(--ke-space-6)}
+.site-footer-grid{display:grid;gap:var(--ke-space-6);grid-template-columns:2fr 1fr 1fr;padding-bottom:var(--ke-space-6);border-bottom:1px solid var(--ke-color-graphite)}
+.site-footer h2{font-family:var(--ke-font-mono);font-size:var(--ke-type-label-size);line-height:var(--ke-type-label-line);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ke-color-white);margin:0 0 var(--ke-space-3)}
+.site-footer address{font-style:normal}
+.site-footer ul{list-style:none;margin:0;padding:0}
+.site-footer li{margin:0 0 var(--ke-space-1)}
+.site-footer a{color:var(--ke-color-silver);text-decoration:none}
+.site-footer a:hover{color:var(--ke-color-white);text-decoration:underline}
+.site-company{color:var(--ke-color-white);font-weight:500}
+.site-legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--ke-space-2) var(--ke-space-5);padding-top:var(--ke-space-4)}
+.site-legal p{margin:0}
+
+@media (max-width:860px){
+  .site-footer-grid{grid-template-columns:1fr 1fr}
+  .site-footer-grid>:first-child{grid-column:1/-1}
+}
+@media (max-width:600px){
+  .site-wrap{padding-left:var(--ke-space-4);padding-right:var(--ke-space-4)}
+  .site-header .site-wrap{padding-top:var(--ke-space-4);padding-bottom:var(--ke-space-4)}
+  .site-nav ul{gap:var(--ke-space-2) var(--ke-space-4)}
+  .site-hero-body{padding-top:var(--ke-space-7);padding-bottom:var(--ke-space-8);min-height:404px}
+  .site-hero h1{font-size:var(--ke-type-h1-size);line-height:var(--ke-type-h1-line)}
+  .site-lead{font-size:var(--ke-type-h3-size);line-height:var(--ke-type-h3-line)}
+  .site-motif{width:50vw;opacity:.5}
+  .site-hero-compact .site-hero-body{min-height:0;padding-bottom:var(--ke-space-6)}
+}

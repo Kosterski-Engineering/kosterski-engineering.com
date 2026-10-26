@@ -14,10 +14,12 @@
   <link rel="preload" href="assets/fonts/IBMPlexSans-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/tokens.css">
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/chrome.css">
 </head>
 <body>
-  <div class="page">
-    <svg class="motif" viewBox="0 0 640 480" aria-hidden="true">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="site-hero ke-inverse">
+    <svg class="site-motif" viewBox="0 0 640 480" aria-hidden="true">
       <g stroke-width="20">
         <line x1="360" y1="-40" x2="700" y2="395"/>
         <line x1="400" y1="-40" x2="740" y2="395"/>
@@ -25,28 +27,208 @@
         <line x1="480" y1="-40" x2="820" y2="395"/>
       </g>
     </svg>
-
-    <header>
-      <a class="brand" href="./">
-        <img src="assets/img/logo_horizontal_accent_dark_bg.svg" alt="Kosterski Engineering" width="174" height="36">
-      </a>
+    <header class="site-header">
+      <div class="site-wrap">
+        <a class="site-brand" href="index.html">
+          <img src="assets/img/logo_horizontal_accent_dark_bg.svg" alt="Kosterski Engineering, home" width="174" height="36">
+        </a>
+        <nav class="site-nav" aria-label="Main">
+          <ul>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="sysassist/">SysAssist</a></li>
+          <li><a href="prototype-fleet.html">Prototype fleet management</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-
-    <main>
+    <div class="site-wrap site-hero-body">
       <p class="ke-label">Embedded · Automotive · Systems engineering</p>
       <h1>Systems. Software. Delivered.</h1>
-      <p class="lead">Your engineering partner for automotive embedded systems.</p>
-      <a class="ke-btn" href="mailto:contact@kosterski-engineering.com">Get in touch</a>
-    </main>
-
-    <footer>
-      <address>
-        <span class="company">Kosterski Engineering sp. z o.o.</span><br>
-        Wyspa Słodowa 7, 50-266 Wrocław, Poland<br>
-        VAT ID: PL8982307447 · <a href="mailto:contact@kosterski-engineering.com">contact@kosterski-engineering.com</a>
-      </address>
-      <p>&copy; 2026 Kosterski Engineering sp. z o.o. · Embedded systems engineering for automotive</p>
-    </footer>
+      <p class="site-lead">Your engineering partner for automotive embedded systems.</p>
+      <div class="site-actions">
+        <a class="ke-btn" href="#contact">Get in touch</a>
+        <a class="site-btn-ghost" href="#services">What we do</a>
+      </div>
+    </div>
   </div>
+  <main id="main">
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <p class="ke-label">Services</p>
+        <h2 id="services-title">What we do</h2>
+        <p class="intro">We support automotive companies where technical uncertainty has to be turned into clear requirements, processes and measurable results.</p>
+        <div class="grid grid-3">
+          <article class="card">
+            <p class="ke-label">01</p>
+            <h3>Systems engineering</h3>
+            <ul class="card-list">
+              <li>We define system architecture and functional decomposition for complex engineering projects.</li>
+              <li>We manage system requirements with full traceability.</li>
+              <li>We align architecture, implementation and verification across the V-model with cross-functional teams.</li>
+              <li>We identify product variants and set up variant management.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <p class="ke-label">02</p>
+            <h3>Embedded software</h3>
+            <ul class="card-list">
+              <li>We develop embedded software in C and C++ for automotive control units, including AUTOSAR components.</li>
+              <li>We implement and optimise vehicle communication (CAN, FlexRay) and bootloader functions.</li>
+              <li>We integrate, test and debug ECU software in the vehicle system.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <p class="ke-label">03</p>
+            <h3>Verification and validation</h3>
+            <ul class="card-list">
+              <li>We develop test cases, test environments, simulations and tools.</li>
+              <li>We build restbus simulations and configure test benches and HIL environments.</li>
+              <li>We analyse test results and feed findings back into development.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <p class="ke-label">04</p>
+            <h3>Process and compliance</h3>
+            <ul class="card-list">
+              <li>We apply Automotive SPICE processes to system development and lifecycle management.</li>
+              <li>We write process descriptions and work instructions, e.g. for system architectural design (SYS.3).</li>
+              <li>We prepare audit-ready documentation for assessments and customer audits.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <p class="ke-label">05</p>
+            <h3>Functional safety and cybersecurity</h3>
+            <ul class="card-list">
+              <li>We develop safety-critical requirements and architecture according to ISO 26262, up to ASIL D.</li>
+              <li>We define requirements for diagnostics and flashing according to ISO/SAE 21434, including firmware-over-the-air (FOTA) concepts.</li>
+              <li>We run risk analyses and security assessments.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <p class="ke-label">06</p>
+            <h3>Project and team coordination</h3>
+            <ul class="card-list">
+              <li>We synchronise the work of interdisciplinary teams and keep communication flowing between them.</li>
+              <li>We track project status, risks and milestones, and report regularly to stakeholders.</li>
+              <li>We manage technical problems from root-cause analysis to verified resolution.</li>
+            </ul>
+          </article>
+          <article class="card card-wide">
+            <p class="ke-label">07</p>
+            <h3>Prototype fleet management</h3>
+            <ul class="card-list">
+              <li>We register and insure test and prototype vehicles in Poland, including pre-homologation vehicles.</li>
+              <li>We install and look after the measurement equipment the test programme needs.</li>
+              <li>We run test drives in Poland and across Europe, and analyse the results.</li>
+            </ul>
+            <a class="more" href="prototype-fleet.html">About prototype fleet management &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="expertise" aria-labelledby="expertise-title">
+      <div class="wrap">
+        <p class="ke-label">Expertise</p>
+        <h2 id="expertise-title">Standards, tools and domains from our projects</h2>
+        <p class="intro">What our engineers have worked with in automotive development projects at OEMs and suppliers.</p>
+        <dl class="expertise">
+          <div><dt>Processes and standards</dt><dd>Automotive SPICE · ISO 26262 · ISO/SAE 21434 · AUTOSAR · ISO 27001</dd></div>
+          <div><dt>Requirements and architecture</dt><dd>DOORS · Polarion · Codebeamer · Windchill RV&amp;S · PREEvision · Enterprise Architect · IBM Rhapsody · SysML</dd></div>
+          <div><dt>Vehicle networks and test</dt><dd>CAN · FlexRay · Automotive Ethernet (SOME/IP) · UDS · CANoe · CANape · HIL</dd></div>
+          <div><dt>Domains</dt><dd>ADAS · passive safety · powertrain and EV high-voltage inverters · drivelines · ECU flashing and FOTA</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="products" aria-labelledby="products-title">
+      <div class="wrap split">
+        <div>
+          <p class="ke-label">Products</p>
+          <h2 id="products-title">SysAssist</h2>
+          <p>An AI assistant for systems engineers, supporting the Automotive SPICE SYS.1, SYS.2 and SYS.3 processes. It is designed to work in your ALM: it drafts and reviews requirements, and every suggestion waits for the engineer’s decision.</p>
+          <div class="actions">
+            <a class="ke-btn" href="sysassist/">About SysAssist</a>
+          </div>
+        </div>
+        <dl class="facts">
+          <div><dt>Status</dt><dd>Pre-pilot</dd></div>
+          <div><dt>Processes</dt><dd>SYS.1, SYS.2, SYS.3; test case drafts for SYS.4 and SYS.5</dd></div>
+          <div><dt>Designed for</dt><dd>Codebeamer, DOORS / DOORS Next, Polarion, Windchill RV&amp;S</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section alt" id="about" aria-labelledby="about-title">
+      <div class="wrap split">
+        <div>
+          <p class="ke-label">About us</p>
+          <h2 id="about-title">Engineers who have done the work</h2>
+          <p>Kosterski Engineering sp. z o.o. is an engineering company based in Wrocław, Poland. It was founded by engineers who have spent their careers inside automotive development projects: from embedded software and system testing to system architecture, requirements and team leadership at OEMs and suppliers.</p>
+          <p>We work with customers in English, German and Polish.</p>
+        </div>
+        <dl class="facts">
+          <div><dt>Company</dt><dd>Kosterski Engineering sp. z o.o.</dd></div>
+          <div><dt>Location</dt><dd>Wrocław, Poland</dd></div>
+          <div><dt>Focus</dt><dd>Embedded systems engineering for automotive</dd></div>
+          <div><dt>Languages</dt><dd>English, German, Polish</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap split">
+        <div>
+          <p class="ke-label">Contact</p>
+          <h2 id="contact-title">Talk to us about your project</h2>
+          <p>Tell us briefly what you are working on and where you need support.</p>
+          <div class="actions">
+            <a class="ke-btn" href="mailto:contact@kosterski-engineering.com">contact@kosterski-engineering.com</a>
+          </div>
+        </div>
+        <dl class="facts">
+          <div><dt>E-mail</dt><dd><a href="mailto:contact@kosterski-engineering.com">contact@kosterski-engineering.com</a></dd></div>
+          <div><dt>Address</dt><dd>Kosterski Engineering sp. z o.o.<br>Wyspa Słodowa 7<br>50-266 Wrocław<br>Poland</dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-wrap">
+      <div class="site-footer-grid">
+        <div>
+          <h2>Company</h2>
+          <address>
+            <span class="site-company">Kosterski Engineering sp. z o.o.</span><br>
+            Wyspa Słodowa 7, 50-266 Wrocław, Poland<br>
+            VAT ID: PL8982307447<br>
+            <a href="mailto:contact@kosterski-engineering.com">contact@kosterski-engineering.com</a>
+          </address>
+        </div>
+        <div>
+          <h2>Pages</h2>
+          <ul>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="sysassist/">SysAssist</a></li>
+            <li><a href="prototype-fleet.html">Prototype fleet management</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Legal</h2>
+          <ul>
+            <li><a href="legal-notice.html">Legal notice</a></li>
+            <li><a href="privacy.html">Privacy policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-legal">
+        <p>&copy; 2026 Kosterski Engineering sp. z o.o.</p>
+        <p>Embedded systems engineering for automotive</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
