@@ -39,6 +39,7 @@ img{max-width:100%}
 .card-list{margin:0 0 var(--ke-space-3);padding:0;list-style:none;color:var(--ke-text-muted)}
 .card-list li{position:relative;padding-left:var(--ke-space-4);margin-bottom:var(--ke-space-2)}
 .card-list li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:2px;background:var(--ke-color-orange)}
+.card-wide{grid-column:1/-1}
 .card .more{margin-top:auto;padding-top:var(--ke-space-3);font-weight:600;text-decoration:none}
 .card .more:hover{text-decoration:underline}
 
