@@ -19,7 +19,7 @@ Hosted on Cloudflare Pages (same setup as the `aspice.ai` repo), see **Hosting**
 - Website copy is in English. No invented facts, figures, clients or certifications; mark unknowns as `[placeholders]`.
 - Use relative paths for links and assets, so pages work on the custom domain, and on `*.pages.dev`.
 - Do not edit `site/assets/tokens.css`; it is copied from the brand pack (`07_web/tokens.css`).
-- Before the site goes live on its domain, `site/_headers` keeps `X-Robots-Tag: noindex` and `site/index.html` keeps `<meta name="robots" content="noindex, nofollow">`. Remove both at launch.
+- The site is live and indexable (launched 2026-10-28): do not add `noindex` (meta robots or `X-Robots-Tag`) to production pages. `site/robots.txt` allows all crawlers.
 
 ## Hosting
 
