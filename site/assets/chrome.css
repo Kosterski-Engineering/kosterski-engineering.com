@@ -69,3 +69,10 @@
   .site-motif{width:50vw;opacity:.5}
   .site-hero-compact .site-hero-body{min-height:0;padding-bottom:var(--ke-space-6)}
 }
+
+/* Body text in main is justified on phones; hyphenation (lang="en") keeps the word spacing even.
+   Text in figures (SysAssist tool mock-ups) stays left-aligned and unhyphenated. */
+@media (max-width:600px){
+  main p,main li,main dd{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+  main figure *{text-align:left;-webkit-hyphens:manual;hyphens:manual}
+}
