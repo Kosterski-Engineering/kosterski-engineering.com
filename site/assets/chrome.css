@@ -71,8 +71,13 @@
 }
 
 /* Body text in main is justified on phones; hyphenation (lang="en") keeps the word spacing even.
-   Text in figures (SysAssist tool mock-ups) stays left-aligned and unhyphenated. */
+   Text in figures (SysAssist tool mock-ups) stays left-aligned and unhyphenated.
+   E-mail links are not split at their hyphen; they move to the next line whole.
+   br.br-mobile breaks the line before an address in running text, so that line is not stretched. */
+.br-mobile{display:none}
 @media (max-width:600px){
   main p,main li,main dd{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
   main figure *{text-align:left;-webkit-hyphens:manual;hyphens:manual}
+  main a[href^="mailto:"]{white-space:nowrap}
+  .br-mobile{display:inline}
 }
