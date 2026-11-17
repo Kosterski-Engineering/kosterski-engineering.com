@@ -71,6 +71,11 @@ img{max-width:100%}
 .toc h2{margin:0 0 var(--ke-space-2) !important;font-family:var(--ke-font-mono);font-size:var(--ke-type-label-size) !important;line-height:var(--ke-type-label-line) !important;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ke-text-muted)}
 .toc ol{margin:0;padding-left:var(--ke-space-5)}
 .toc li{margin:var(--ke-space-1) 0}
+/* Language switch on the privacy policy pages (EN / PL / DE) */
+.lang-switch ul{display:flex;gap:var(--ke-space-3);margin:0 0 var(--ke-space-3);padding:0;list-style:none;font-family:var(--ke-font-mono);font-size:var(--ke-type-label-size);line-height:var(--ke-type-label-line);font-weight:500;letter-spacing:.08em}
+.lang-switch a{display:inline-block;padding:var(--ke-space-1) var(--ke-space-2);border:1px solid var(--ke-border);border-radius:var(--ke-radius-sm);text-decoration:none}
+.lang-switch a[aria-current="page"]{color:var(--ke-text);border-color:var(--ke-text)}
+@media (max-width:600px){main .toc li{text-align:left}}
 
 
 @media (max-width:860px){
